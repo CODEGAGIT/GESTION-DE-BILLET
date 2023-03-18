@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+{% load customtags %}
+
+<html lang="fr">
+
+<head>
+  <title>
+    {% block titre %}
+
+    {% endblock titre %}
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="{% static 'layout.css' %}" type="text/css" media="all">
+  <link rel="stylesheet" href="{% static 'akst/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'akst/css/framework.css' %}">
+  <link rel="stylesheet" href="{% static 'akst/css/font-awesome.min.css' %}">
+  <script type="text/javascript" src=" {% static 'akst/DataTables/media/js/jquery.js' %} "></script>
+  <script type="text/javascript" src=" {% static 'akst/DataTables/media/js/jquery.dataTables.min.js' %} "></script>
+  <script type="text/javascript" src=" {% static 'akst/DataTable/result.js' %} "></script>
+  <link rel="stylesheet" type="text/css" href=" {% static 'akst/DataTables/media/css/jquery.dataTables.min.css' %} ">
+
+  {% block headcomplement %}
+
+  {% endblock headcomplement %}
+
+
+
+</head>
+
+<body id="top">
+
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+
+  <div class="wrapper row0">
+
+    <div id="topbar" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <div class="fl_left">
+        <ul>
+          <li><i class="fa fa-phone"></i> +228 90 00 00 09</li>
+          <li><i class="fa fa-envelope-o"></i> akstransport@gmail.com</li>
+        </ul>
+      </div>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear">
+      <!-- ################################################################################################ -->
+      <div id="logo" class="fl_left">
+        <img src="{% static 'images/logo1.png' %}" alt="">
+        {% now 'd/m/Y H:i:s' %}
+      </div>
+
+      <!-- ################################################################################################ -->
+    </header>
+    {% block contenu %}
+
+    {% endblock contenu %}
+  </div>
+</body>
+
+</html>

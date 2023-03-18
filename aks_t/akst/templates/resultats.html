@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+
+{% block titre %}
+Résultats
+{% endblock titre %}
+
+
+
+{% block contenu %}
+
+<h1>Résultats</h1><br>
+<h1> date : {{lesdates.rslt.date_dep.ladate}} </h1>
+ 
+<div class="scrollable">
+    <table>
+        <thead>
+            <tr>
+                <th>HEURE DE DEPART</th>
+                <th>LIGNE</th>
+                <th>COMPAGNIE</th>
+                <th>PRIX (CFA)</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for i in infln %}
+            <tr>
+                <td> {{i.heure_dep.l_heure}} </td>
+                <td> {{i.ligne_id.ville_dep.ville_id.nom_ville}} - {{i.ligne_id.ville_arr.ville_id.nom_ville}} </td>
+                <td> {{ i.bus_id.compagnie_id.nom_cp }} </td>
+                <td> {{i.ligne_id.prix}} </td>
+                <td><footer><a class="btn" href="#">Réserver &rsaquo;</a></footer></td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+<p><a href="{% url 'akst:index' %} " style="font-size: 18px; font-weight: 500;">&laquo; Revenir en arrière</a></p>
+{% endblock contenu %}
