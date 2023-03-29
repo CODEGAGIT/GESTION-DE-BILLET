@@ -40,4 +40,7 @@ def suggestionForm(request):
     form=SuggestionForm(request.POST or None)
     if form.is_valid():
         form.save()
-    return render(request,'suggestion.html',{'form':form})
+        msg="Vos suggestions ont bien été envoyées. Merci !!!"
+        form=SuggestionForm()
+        
+    return render(request,'suggestion.html',{'form':form},msg)
