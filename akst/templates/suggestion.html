@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+
+{% block titre %}
+AKS-T | Suggestions
+{% endblock titre %}
+
+
+{% block contenu %}
+<form action="#" method="post">
+
+    <div class="one_second">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </div>
+    <div class="boutons">
+        <input class="btn1" type="submit" name="submit" value="Soumettre">
+        &nbsp;
+        <input class="btn1" type="reset" name="reset" value="Annuler">
+    </div>
+</form>
+{% endblock contenu %}
